@@ -1,18 +1,15 @@
 package com.example.bd2.model;
 
 import lombok.Data;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Customers")
 @Data
 public class Customer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private Long customerId;
 
