@@ -27,4 +27,11 @@ public class MembershipCardController {
 
     }
 
+    @DeleteMapping(value = "/getOut", consumes = "application/json")
+    public void deleteQuestion(@RequestBody MembershipCardDTO request)
+    {
+        MembershipCard response;
+        response = membershipCardRepository.getById(request.getMembershipCardTypeId());
+        membershipCardRepository.delete(response);
+    }
 }
