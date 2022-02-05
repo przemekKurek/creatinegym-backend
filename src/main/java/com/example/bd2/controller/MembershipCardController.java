@@ -1,6 +1,7 @@
 package com.example.bd2.controller;
 
 import com.example.bd2.model.DTO.MembershipCardDTO;
+import com.example.bd2.model.DTO.MembershipCardDeleteDTO;
 import com.example.bd2.model.MembershipCard;
 import com.example.bd2.repository.MembershipCardRepository;
 import com.example.bd2.service.MembershipCardService;
@@ -28,10 +29,10 @@ public class MembershipCardController {
     }
 
     @DeleteMapping(value = "/getOut", consumes = "application/json")
-    public void deleteQuestion(@RequestBody MembershipCardDTO request)
+    public void deleteQuestion(@RequestBody MembershipCardDeleteDTO request)
     {
         MembershipCard response;
-        response = membershipCardRepository.getById(request.getMembershipCardTypeId());
+        response = membershipCardRepository.getById(request.getMembershipId());
         membershipCardRepository.delete(response);
     }
 }
