@@ -12,4 +12,20 @@ public class MembershipCardDTO {
     private Long customerId;
 
     private Long membershipCardTypeId;
+
+    public Long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
+
+    public Long getMembershipCardTypeId() {
+        return membershipCardTypeId;
+    }
+
+    public void setMembershipCardTypeId(Long membershipCardTypeId) {
+        this.membershipCardTypeId = membershipCardTypeId;
+    }
 }

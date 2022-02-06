@@ -1,5 +1,6 @@
 package com.example.bd2.model;
 
+import com.example.bd2.model.dictionary.entity.CustonerRequestDict;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,11 +17,15 @@ public class CustomerRequest {
     @Column(name = "customer_id")
     private Long customerId;
 
-    @Column(name = "request_type")
-    private Long requestType;
+    @ManyToOne
+    @JoinColumn(name = "request_type")
+    private CustonerRequestDict requestType;
 
     @Column(name = "request_desc")
     private String requestDesc;
+
+    @Column(name = "status")
+    private String status;
 
 
 }
