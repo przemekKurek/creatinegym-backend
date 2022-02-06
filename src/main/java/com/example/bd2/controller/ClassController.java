@@ -20,10 +20,12 @@ public class ClassController {
     }
 
     @PostMapping(value = "/bookClass", consumes = "application/json")
-    public Class buyCard(@RequestBody ClassDTO request)
+    public Class bookClass(@RequestBody ClassDTO request)
     {
         Class response = classService.bookClass(request);
         return classRepository.save(response);
 
     }
+
+
 }
